@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.fragmentproject.MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="android.app.DialogFragment"
+        android:layout_width="149dp"
+        android:layout_height="match_parent" />
+
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="android.app.DialogFragment"
+        android:layout_width="109dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/fragment1" />
+
+</RelativeLayout>

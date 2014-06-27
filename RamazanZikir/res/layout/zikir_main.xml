@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/zikir_arka"
+    tools:context="com.example.ramazanzikir.MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <TextView
+        android:id="@+id/zikirSayiciText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="67dp"
+        android:layout_marginTop="113dp"
+        android:text="@string/zik_say"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/zikirSayiciText"
+        android:layout_alignBottom="@+id/zikirSayiciText"
+        android:layout_alignParentLeft="true"
+        android:text="@string/zik_saytext"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/zikirButon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="97dp"
+        android:src="@drawable/zikir_start" />
+
+    <Button
+        android:id="@+id/zikir_gor_buton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sifirla_buton"
+        android:layout_alignBottom="@+id/sifirla_buton"
+        android:layout_alignParentRight="true"
+        android:text="@string/buton_zikir_gor" />
+
+    <Button
+        android:id="@+id/sifirla_buton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/kaydet_buton"
+        android:layout_alignBottom="@+id/kaydet_buton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/buton_sifirla" />
+
+    <Button
+        android:id="@+id/kaydet_buton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="27dp"
+        android:layout_marginLeft="14dp"
+        android:text="@string/buton_kaydet" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="@string/ramazan"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/ziki_ad_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:hint="@string/edit_hint"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/kaydet_buton"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="16dp"
+        android:text="@string/zikir_ad"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
+
+
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ExampleProject</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="sehir_id">Şehir ID</string>
+    <string name="hava_durum">Hava Durumu</string>
+    <string name="gokyuzu">Gökyüzü</string>
+    <string name="sehiradi">Şehir Adı: </string>
+	<string name="iconid">İcon ID: </string>
+	<string name="buton">Durumu Göster </string>
+	<string name="baslik">HAVA DURUMU</string>
+</resources>

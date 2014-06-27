@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RamazanZikir</string>
+    <string name="zik_say">Zikir Adet</string>
+    <string name="zik_saytext">Çekilen Zikir: </string>
+    <string name="action_settings">Settings</string>
+    <string name="ramazan">Şehr-i Ramazan İftar</string>
+    <string name="zikir_cek_buton">Zikir Çek</string>
+    <string name="buton_kaydet">Kaydet</string>
+    <string name="buton_sifirla">Sıfırla</string>
+    <string name="buton_zikir_gor">Zikirleri Gör</string>
+    <string name="zikir_ad">Zikir Adı: </string>
+    <string name="edit_hint">Zikir adını giriniz..</string>
+
+</resources>
