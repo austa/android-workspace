@@ -1,5 +1,8 @@
 package com.austa.barcodescanner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.json.JSONObject;
 
 import com.android.volley.Request;
@@ -9,7 +12,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.Request.Method;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.austa.barcodescanner.gson.parse.GsonParseClass;
+import com.austa.barcodescanner.gson.parse.JsonParseClass;
+import com.austa.barcodescanner.gson.parse.ProductPropertyClass;
 import com.austa.barcodescanner.utils.Alerts;
 
 import android.app.Activity;
@@ -25,8 +29,10 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 	private TextView tvStatus;
 	private TextView tvResult;
-	private GsonParseClass jtos;
+	private JsonParseClass jtos;
 	private RequestQueue mRequestQueue;
+	private static List<ProductPropertyClass> productList = new ArrayList<ProductPropertyClass>();
+	private ProductPropertyClass propertyProduct;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,15 +58,16 @@ public class MainActivity extends Activity {
 				}
 			}
 		});
-
 	}
 
 	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+		propertyProduct = new ProductPropertyClass();
 		if (requestCode == 0) {
 			if (resultCode == RESULT_OK) {
 				tvStatus.setText(intent.getStringExtra("SCAN_RESULT_FORMAT"));
 				String result = intent.getStringExtra("SCAN_RESULT");
 				generateRequest(result);
+				tvResult.setText(propertyProduct.toString());
 			} else if (resultCode == RESULT_CANCELED) {
 				tvStatus.setText("Ekranı barkotun üzerine tutun.");
 				tvResult.setText("Sonuç dönmedi.");
@@ -72,10 +79,10 @@ public class MainActivity extends Activity {
 		String url = "http://www.searchupc.com/handlers/upcsearch.ashx?request_type=3&access_token=C1D63810-388B-4B3E-BECD-5778741E60E0&upc="
 				+ result;
 
-		jtos = new GsonParseClass();
+		jtos = new JsonParseClass();
 
 		final ProgressDialog pDialog = new ProgressDialog(this);
-		pDialog.setMessage("Loading...");
+		pDialog.setMessage("Bilgiler geliyor...");
 		pDialog.show();
 		JsonObjectRequest jsonObjReq = new JsonObjectRequest(Method.GET, url,
 				null, new Response.Listener<JSONObject>() {
@@ -83,8 +90,9 @@ public class MainActivity extends Activity {
 					@Override
 					public void onResponse(JSONObject response) {
 						pDialog.hide();
-						jtos.setResponse(response);
-						jtos.gsonParse();
+						String deneme = jtos.findAndReplace(response);
+						Toast.makeText(getApplicationContext(), deneme, Toast. LENGTH_LONG).show();
+						jtos.addCurrentProductToProductsListUsingGson(response, productList);
 					}
 				}, new Response.ErrorListener() {
 

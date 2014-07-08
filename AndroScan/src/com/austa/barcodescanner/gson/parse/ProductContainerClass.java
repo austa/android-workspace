@@ -4,4 +4,5 @@ import java.util.List;
 
 public class ProductContainerClass {
 	public List<ProductPropertyClass> products;
+	
 }
