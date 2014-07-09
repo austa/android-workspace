@@ -6,4 +6,5 @@
     <string name="menu_settings">Settings</string>
 	<string name="scan">Barcode Scanner</string>
 	<string name="sesle">Ses ile Ara</string>
+	<string name="urun_hakkinda">Aradığınız ürün hakkında:</string>
 </resources>

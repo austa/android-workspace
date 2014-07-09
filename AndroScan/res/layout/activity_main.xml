@@ -6,37 +6,20 @@
 
     <Button
         android:id="@+id/btnScan"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Scan"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_weight="0.34"
+        android:text="Barkot Ara"
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tvStatuslbl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.03"
-        android:text="Status"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/white" />
-
- <TextView
-        android:id="@+id/tvStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textColor="@android:color/white"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/tvResultlbl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.03"
-        android:text="Result"
+        android:text="@string/urun_hakkinda"
         android:textColor="@android:color/white" />
 
   <TextView
@@ -44,6 +27,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2.95"
-                android:textColor="@android:color/white"
+        android:textColor="@android:color/white"
       />
 </LinearLayout>
