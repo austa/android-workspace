@@ -24,7 +24,6 @@ import com.austa.barcodescanner.gson.parse.ProductPropertyClass;
 import com.austa.barcodescanner.utils.Alerts;
 
 public class MainActivity extends Activity {
-    private TextView tvStatus;
     private TextView tvResult;
     private JsonParseClass jtos;
     private RequestQueue mRequestQueue;
@@ -60,7 +59,6 @@ public class MainActivity extends Activity {
                 generateRequest(result);
                 tvResult.setText(editJsonEntity(productList.toString()));
             } else if (resultCode == RESULT_CANCELED) {
-                tvStatus.setText("Ekranı barkotun üzerine tutun.");
                 tvResult.setText("Sonuç dönmedi.");
             }
         }

@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" 
     android:background="@drawable/bgimag"
@@ -6,10 +6,9 @@
 
     <Button
         android:id="@+id/btnScan"
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:layout_weight="0.34"
-        android:text="Barkot Ara"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/urun_ara"
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -18,15 +17,27 @@
         android:id="@+id/tvResultlbl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.03"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btnScan"
         android:text="@string/urun_hakkinda"
         android:textColor="@android:color/white" />
 
-  <TextView
-        android:id="@+id/tvResult"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="2.95"
-        android:textColor="@android:color/white"
-      />
-</LinearLayout>
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnScan"
+        android:layout_marginRight="22dp"
+        android:text="X adet ürün bulundu." />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvResultlbl"
+        android:layout_marginTop="46dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>
