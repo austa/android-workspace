@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
 				tvStatus.setText(intent.getStringExtra("SCAN_RESULT_FORMAT"));
 				String result = intent.getStringExtra("SCAN_RESULT");
 				generateRequest(result);
-				tvResult.setText(propertyProduct.toString());
+				tvResult.setText(productList.toString());
 			} else if (resultCode == RESULT_CANCELED) {
 				tvStatus.setText("Ekranı barkotun üzerine tutun.");
 				tvResult.setText("Sonuç dönmedi.");
@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
 				+ result;
 
 		jtos = new JsonParseClass();
-
+		
 		final ProgressDialog pDialog = new ProgressDialog(this);
 		pDialog.setMessage("Bilgiler geliyor...");
 		pDialog.show();
@@ -90,9 +90,9 @@ public class MainActivity extends Activity {
 					@Override
 					public void onResponse(JSONObject response) {
 						pDialog.hide();
-						String deneme = jtos.findAndReplace(response);
-						Toast.makeText(getApplicationContext(), deneme, Toast. LENGTH_LONG).show();
-						jtos.addCurrentProductToProductsListUsingGson(response, productList);
+						//String deneme = jtos.findAndReplace(response);
+						//Toast.makeText(getApplicationContext(), deneme, Toast. LENGTH_LONG).show();
+						productList=jtos.addCurrentProductToProductsListUsingGson(response);
 					}
 				}, new Response.ErrorListener() {
 

@@ -1,8 +1,14 @@
 package com.austa.barcodescanner.gson.parse;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class ProductContainerClass {
-	public List<ProductPropertyClass> products;
+	public ArrayList<ProductPropertyClass> product;
+
+	public ArrayList<ProductPropertyClass> getProduct() {
+		return product;
+	}
+
+	
 	
 }
