@@ -40,4 +40,13 @@
         android:layout_marginTop="46dp"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <Button
+        android:id="@+id/btnIkinci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvResult"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="İkinci activity gitmelisin" />
+
 </RelativeLayout>

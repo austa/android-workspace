@@ -20,7 +20,6 @@ public class JsonParseClass {
 
         Gson g = new Gson();
         ProductContainerClass vc = g.fromJson(findAndReplace(currentProduct), ProductContainerClass.class);
-
         return vc.getProduct();
 
         /*

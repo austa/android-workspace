@@ -22,6 +22,34 @@ public class ProductPropertyClass {
     @SerializedName(JsonParseClass.PRODUCT_STORE_NAME)
     private String productStoreName;
 
+    public String getProductName() {
+        return productName;
+    }
+
+    public String getProductPrice() {
+        return productPrice;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    @SerializedName("responseData")
+    private ResponseData response;
+
+    public ResponseData getResponse() {
+        return response;
+    }
+
+    public class ResponseData {
+        @SerializedName("results")
+        private ProductPropertyClass[] results;
+
+        public ProductPropertyClass[] getResults() {
+            return results;
+        }
+    }
+
     @Override
     public String toString() {
 

@@ -27,13 +27,14 @@ public class MainActivity extends Activity {
     private TextView tvResult;
     private JsonParseClass jtos;
     private RequestQueue mRequestQueue;
+    private Button btnIkınci;
     private static List<ProductPropertyClass> productList = new ArrayList<ProductPropertyClass>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        btnIkınci = (Button) findViewById(R.id.btnIkinci);
         tvResult = (TextView) findViewById(R.id.tvResult);
 
         Button scanBtn = (Button) findViewById(R.id.btnScan);
@@ -50,6 +51,16 @@ public class MainActivity extends Activity {
                 }
             }
         });
+        btnIkınci.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
