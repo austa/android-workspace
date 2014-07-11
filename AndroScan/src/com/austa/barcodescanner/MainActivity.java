@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Request.Method;
@@ -27,6 +28,7 @@ import com.google.gson.Gson;
 
 public class MainActivity extends Activity {
     private String url = "http://www.searchupc.com/handlers/upcsearch.ashx?request_type=3&access_token=C1D63810-388B-4B3E-BECD-5778741E60E0&upc=";
+    private TextView tvNotResult;
     private Button scanButton;
     private ListView resultList;
     private ProgressBar progressBar;
@@ -38,7 +40,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.second_activity);
+        setContentView(R.layout.activity_main);
+        tvNotResult = (TextView) findViewById(R.id.tvNotResult);
         scanButton = (Button) findViewById(R.id.scanButton);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         resultList = (ListView) findViewById(R.id.resultsList);
@@ -56,7 +59,6 @@ public class MainActivity extends Activity {
                 } catch (Exception e) {
                     e.printStackTrace();
                     Toast.makeText(getApplicationContext(), "ERROR:" + e, 1).show();
-
                 }
             }
         });
@@ -65,10 +67,11 @@ public class MainActivity extends Activity {
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == 0) {
             if (resultCode == RESULT_OK) {
+                tvNotResult.setVisibility(View.GONE);
                 String result = intent.getStringExtra("SCAN_RESULT");
                 generateRequest(result);
             } else if (resultCode == RESULT_CANCELED) {
-                Toast.makeText(getApplicationContext(), "Aranılan sonuc bulunamadı", Toast.LENGTH_LONG).show();
+                tvNotResult.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.GONE);
                 scanButton.setEnabled(true);
             }

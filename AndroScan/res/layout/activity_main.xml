@@ -1,52 +1,50 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" 
-    android:background="@drawable/bgimag"
-    android:orientation="vertical">
-
-    <Button
-        android:id="@+id/btnScan"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/urun_ara"
-        android:textColor="@android:color/white"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tvResultlbl"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:padding="10dp">
+ 
+    <RelativeLayout 
+        android:id="@+id/searchArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/btnScan"
-        android:text="@string/urun_hakkinda"
-        android:textColor="@android:color/white" />
+        android:layout_alignParentTop="true"
+        >
 
-    <TextView
-        android:id="@+id/textView1"
+        <Button
+            android:id="@+id/scanButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:enabled="true"
+            android:text="@string/urun_ara" />
+
+    </RelativeLayout>
+    
+     <ListView 
+         android:id="@+id/resultsList"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/searchArea"
+         android:layout_marginTop="5dp"
+         android:visibility="gone"/>
+     
+     <ProgressBar 
+        android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnScan"
-        android:layout_marginRight="22dp"
-        android:text="X adet ürün bulundu." />
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+     
+     <TextView 
+         android:id="@+id/tvNotResult"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:visibility="gone"
+         android:layout_below="@+id/searchArea"
+         android:layout_marginTop="5dp"
+         android:text="@string/not_result" />
 
-    <TextView
-        android:id="@+id/tvResult"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tvResultlbl"
-        android:layout_marginTop="46dp"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <Button
-        android:id="@+id/btnIkinci"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvResult"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="İkinci activity gitmelisin" />
 
 </RelativeLayout>

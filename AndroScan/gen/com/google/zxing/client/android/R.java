@@ -73,11 +73,11 @@ public final class R {
 		public static final int return_scan_result = 0x7f080007;
 		public static final int search_book_contents_failed = 0x7f080008;
 		public static final int search_book_contents_succeeded = 0x7f080009;
-		public static final int share_app_button = 0x7f080036;
-		public static final int share_bookmark_button = 0x7f080037;
-		public static final int share_clipboard_button = 0x7f080039;
-		public static final int share_contact_button = 0x7f080038;
-		public static final int share_text_view = 0x7f08003a;
+		public static final int share_app_button = 0x7f080032;
+		public static final int share_bookmark_button = 0x7f080033;
+		public static final int share_clipboard_button = 0x7f080035;
+		public static final int share_contact_button = 0x7f080034;
+		public static final int share_text_view = 0x7f080036;
 		public static final int shopper_button = 0x7f080021;
 		public static final int snippet_view = 0x7f080031;
 		public static final int status_view = 0x7f080022;
@@ -96,7 +96,7 @@ public final class R {
 		public static final int search_book_contents = 0x7f030008;
 		public static final int search_book_contents_header = 0x7f030009;
 		public static final int search_book_contents_list_item = 0x7f03000a;
-		public static final int share = 0x7f03000c;
+		public static final int share = 0x7f03000b;
 	}
 	public static final class raw {
 		public static final int beep = 0x7f050000;
