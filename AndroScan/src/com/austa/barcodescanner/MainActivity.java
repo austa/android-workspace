@@ -1,7 +1,6 @@
 package com.austa.barcodescanner;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import org.json.JSONObject;
 import android.app.Activity;
@@ -32,8 +31,7 @@ public class MainActivity extends Activity {
     private ListView resultList;
     private ProgressBar progressBar;
     private RequestQueue queue;
-    private Gson gson;
-    private JsonObjectRequest searchRequest, extendedRequest;
+    private Gson g;
     private ImageSearchResultAdapter adapter;
     private List<ProductPropertyClass> productList;
 
@@ -49,8 +47,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 scanButton.setEnabled(false);
-                progressBar.setVisibility(View.VISIBLE);
                 resultList.setVisibility(View.GONE);
+                progressBar.setVisibility(View.VISIBLE);
                 try {
                     Intent intent = new Intent("com.google.zxing.client.android.SCAN");
                     intent.putExtra("SCAN_MODE", "QR_CODE_MODE,PRODUCT_MODE");
@@ -58,6 +56,7 @@ public class MainActivity extends Activity {
                 } catch (Exception e) {
                     e.printStackTrace();
                     Toast.makeText(getApplicationContext(), "ERROR:" + e, 1).show();
+
                 }
             }
         });
@@ -68,7 +67,11 @@ public class MainActivity extends Activity {
             if (resultCode == RESULT_OK) {
                 String result = intent.getStringExtra("SCAN_RESULT");
                 generateRequest(result);
-            } else if (resultCode == RESULT_CANCELED) {}
+            } else if (resultCode == RESULT_CANCELED) {
+                Toast.makeText(getApplicationContext(), "Aranılan sonuc bulunamadı", Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
+                scanButton.setEnabled(true);
+            }
         }
     }
 
@@ -118,25 +121,14 @@ public class MainActivity extends Activity {
     private void setUpResults(JSONObject response) {
 
         productList = new ArrayList<ProductPropertyClass>();
-        Gson g = new Gson();
+        g = new Gson();
         ProductContainerClass vc = g.fromJson(findAndReplace(response), ProductContainerClass.class);
         productList = vc.getProduct();
         adapter = new ImageSearchResultAdapter(this, productList);
         resultList.setAdapter(adapter);
         resultList.setVisibility(View.VISIBLE);
-        //get the next 8 results in the list           
         progressBar.setVisibility(View.GONE);
 
-    }
-
-    private void addExtendedResults(JSONObject response) {
-        ProductPropertyClass searchClass = gson.fromJson(response.toString(), ProductPropertyClass.class);
-        if (searchClass.getResponse() != null) {
-            ProductPropertyClass[] results = searchClass.getResponse().getResults();
-            List<ProductPropertyClass> tempList = Arrays.asList(results);
-            productList.addAll(tempList);
-            resultList.setAdapter(adapter);
-        }
     }
 
     public String findAndReplace(JSONObject currentProduct) {

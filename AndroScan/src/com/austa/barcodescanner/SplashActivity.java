@@ -37,9 +37,6 @@ public class SplashActivity extends Activity {
 
     }
 
-    /**
-     * finish activity without memory expand
-     */
     private void finishActivity() {
 
         SplashActivity.this.finish();
