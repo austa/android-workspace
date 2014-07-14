@@ -52,7 +52,7 @@ public class ImageSearchResultAdapter extends BaseAdapter {
         }
         ProductPropertyClass selectedResult = (ProductPropertyClass) getItem(position);
         ViewHolder holder = (ViewHolder) view.getTag();
-        holder.title.setText(selectedResult.getProductName());
+        holder.title.setText(selectedResult.getProductName()); // burası önemli
         holder.content.setText(Html.fromHtml(selectedResult.getProductPrice()));
         holder.resultImage.setImageUrl(selectedResult.getImageUrl(), loader);
 

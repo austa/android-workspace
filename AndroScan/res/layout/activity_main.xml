@@ -18,7 +18,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:enabled="true"
-            android:text="@string/urun_ara" />
+            android:text="@string/urun_ara"
+            android:background="@drawable/filter_apply_button" />
 
     </RelativeLayout>
     

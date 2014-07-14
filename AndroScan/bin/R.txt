@@ -22,11 +22,12 @@ int color viewfinder_frame 0x7f070013
 int color viewfinder_laser 0x7f070014
 int color viewfinder_mask 0x7f070015
 int drawable bgimag 0x7f020000
-int drawable ic_launcher 0x7f020001
-int drawable launcher_icon 0x7f020002
-int drawable share_via_barcode 0x7f020003
-int drawable shopper_icon 0x7f020004
-int drawable splash_background 0x7f020005
+int drawable filter_apply_button 0x7f020001
+int drawable ic_launcher 0x7f020002
+int drawable launcher_icon 0x7f020003
+int drawable share_via_barcode 0x7f020004
+int drawable shopper_icon 0x7f020005
+int drawable splash_background 0x7f020006
 int id auto_focus 0x7f080000
 int id back_button 0x7f080026
 int id barcode_image_view 0x7f080015
