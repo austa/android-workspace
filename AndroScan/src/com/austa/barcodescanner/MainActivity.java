@@ -3,11 +3,14 @@ package com.austa.barcodescanner;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONObject;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -21,13 +24,15 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.austa.barcodescanner.adapter.ImageSearchResultAdapter;
+import com.austa.barcodescanner.dfragment.DFragment;
 import com.austa.barcodescanner.gson.parse.ProductContainerClass;
 import com.austa.barcodescanner.gson.parse.ProductPropertyClass;
 import com.austa.barcodescanner.utils.Alerts;
 import com.google.gson.Gson;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
     private String url = "http://www.searchupc.com/handlers/upcsearch.ashx?request_type=3&access_token=C1D63810-388B-4B3E-BECD-5778741E60E0&upc=";
+    private View vDraw;
     private TextView tvNotResult;
     private Button scanButton;
     private ListView resultList;
@@ -36,11 +41,13 @@ public class MainActivity extends Activity {
     private Gson g;
     private ImageSearchResultAdapter adapter;
     private List<ProductPropertyClass> productList;
+    FragmentManager fm = getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        vDraw = (View) findViewById(R.id.view1);
         tvNotResult = (TextView) findViewById(R.id.tvNotResult);
         scanButton = (Button) findViewById(R.id.scanButton);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -130,7 +137,22 @@ public class MainActivity extends Activity {
         adapter = new ImageSearchResultAdapter(this, productList);
         resultList.setAdapter(adapter);
         resultList.setVisibility(View.VISIBLE);
+        vDraw.setVisibility(View.VISIBLE);
+        listViewClikEvent(resultList);
         progressBar.setVisibility(View.GONE);
+
+    }
+
+    private void listViewClikEvent(ListView listview) {
+        listview.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
+                DFragment alertdFragment = new DFragment();
+                alertdFragment.setData(productList.get(position));
+                alertdFragment.show(fm, "Alert Dialog Fragment");
+            }
+        });
 
     }
 

@@ -55,13 +55,9 @@ public class ProductPropertyClass {
 
         return "İsim: " + this.productName + "\n" +
 
-        "Fotoğraf url: " + this.imageUrl + "\n" +
-
         "Ürün Fiyatı: " + this.productPrice + "\n" +
 
         "Para Birim: " + this.productCurrency + "\n" +
-
-        "İndirimli fiyat: " + this.productSalePrice + "\n" +
 
         "Mağza adı: " + this.productStoreName + "\n";
 
