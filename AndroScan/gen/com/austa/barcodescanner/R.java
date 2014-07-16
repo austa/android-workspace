@@ -88,7 +88,7 @@ public final class R {
         public static final int result_view=0x7f080015;
         public static final int resultsList=0x7f08000c;
         public static final int return_scan_result=0x7f080007;
-        public static final int saveBtn=0x7f080026;
+        public static final int saveBtn=0x7f080027;
         public static final int scanButton=0x7f08000b;
         public static final int searchArea=0x7f08000a;
         public static final int search_book_contents_failed=0x7f080008;
@@ -107,7 +107,7 @@ public final class R {
         public static final int tvProductInformation=0x7f080025;
         public static final int type_text_view=0x7f08001a;
         public static final int type_text_view_label=0x7f080019;
-        public static final int upBtn=0x7f080027;
+        public static final int upBtn=0x7f080026;
         public static final int view1=0x7f08000d;
         public static final int viewfinder_view=0x7f080014;
         public static final int vw_splash_main=0x7f080010;

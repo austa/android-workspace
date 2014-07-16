@@ -67,7 +67,7 @@ int id result_list_view 0x7f080033
 int id result_view 0x7f080015
 int id resultsList 0x7f08000c
 int id return_scan_result 0x7f080007
-int id saveBtn 0x7f080026
+int id saveBtn 0x7f080027
 int id scanButton 0x7f08000b
 int id searchArea 0x7f08000a
 int id search_book_contents_failed 0x7f080008
@@ -86,7 +86,7 @@ int id tvNotResult 0x7f08000f
 int id tvProductInformation 0x7f080025
 int id type_text_view 0x7f08001a
 int id type_text_view_label 0x7f080019
-int id upBtn 0x7f080027
+int id upBtn 0x7f080026
 int id view1 0x7f08000d
 int id viewfinder_view 0x7f080014
 int id vw_splash_main 0x7f080010
