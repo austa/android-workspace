@@ -1,62 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="5dp" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="0px"
+    android:orientation="vertical" >
 
-    <com.android.volley.toolbox.NetworkImageView
-        android:id="@+id/resultImage"
-        android:layout_width="75sp"
-        android:layout_height="75sp"
-        android:layout_marginRight="5dp"
-        android:contentDescription="category icon" />
+    <RelativeLayout
+        android:id="@+id/rlayoutID"
+        android:layout_width="300dp"
+        android:layout_height="170dp" >
 
-    <TextView
-        android:id="@+id/tvProductInformation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/resultImage"
-        android:text="N/A"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/resultImage"
+            android:layout_width="75sp"
+            android:layout_height="75sp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="37.5dp"
+            android:contentDescription="category icon" />
 
-    <View
-        android:id="@+id/view1"
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true" >
+
+            <TextView
+                android:id="@+id/tvProductInformation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N/A"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+                
+        <View
+	        android:id="@+id/view1"
+	        android:layout_width="match_parent"
+	        android:layout_height="2dp"
+	        android:background="@color/blue"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_alignBottom="@+id/tvProductInformation"
-        android:layout_alignParentLeft="true"
-        android:background="@color/blue"/>
-    
-    <ProgressBar 
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone" />
+        android:orientation="horizontal"
+        android:layout_height="50dp"
+        android:weightSum="2" >
 
-    <Button
-        android:id="@+id/upBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/saveBtn"
-        android:layout_alignBottom="@+id/saveBtn"
-        android:layout_alignRight="@+id/view1"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/filter_apply_button"
-        android:enabled="true"
-        android:text="@string/up_product" />
+        <Button
+            android:id="@+id/upBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:background="@drawable/filter_apply_button"
+            android:enabled="true"
+            android:text="@string/up_product" />
+        
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"         
+             />
 
-    <Button
-        android:id="@+id/saveBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/resultImage"
-        android:layout_below="@+id/resultImage"
-        android:layout_marginTop="49dp"
-        android:background="@drawable/filter_apply_button"
-        android:enabled="true"
-        android:text="@string/save_product" />
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:background="@drawable/filter_apply_button"
+            android:enabled="true"
+            android:text="@string/save_product" />
 
-</RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
