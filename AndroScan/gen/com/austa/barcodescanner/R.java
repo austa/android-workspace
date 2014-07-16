@@ -15,6 +15,7 @@ public final class R {
     }
     public static final class color {
         public static final int blue=0x7f070016;
+        public static final int blue_light=0x7f070017;
         public static final int contents_text=0x7f070000;
         public static final int encode_view=0x7f070001;
         public static final int help_button_view=0x7f070002;
@@ -37,6 +38,7 @@ public final class R {
         public static final int viewfinder_frame=0x7f070013;
         public static final int viewfinder_laser=0x7f070014;
         public static final int viewfinder_mask=0x7f070015;
+        public static final int white=0x7f070018;
     }
     public static final class drawable {
         public static final int androidhappy=0x7f020000;
@@ -44,9 +46,10 @@ public final class R {
         public static final int filter_apply_button=0x7f020002;
         public static final int ic_launcher=0x7f020003;
         public static final int launcher_icon=0x7f020004;
-        public static final int share_via_barcode=0x7f020005;
-        public static final int shopper_icon=0x7f020006;
-        public static final int splash_background=0x7f020007;
+        public static final int selector_detail_fragment=0x7f020005;
+        public static final int share_via_barcode=0x7f020006;
+        public static final int shopper_icon=0x7f020007;
+        public static final int splash_background=0x7f020008;
     }
     public static final class id {
         /**  Messages IDs 
