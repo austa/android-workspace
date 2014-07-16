@@ -9,4 +9,6 @@
 	<string name="urun_hakkinda">Aradığınız ürün hakkında:</string>
 	<string name="urun_ara">Barkot Ara</string>
 	<string name="not_result">Herhangi bir barkot göremedik, bu yüzden sonuç bulamadık.</string>
+	<string name="save_product">Ürünü Kaydet</string>
+	<string name="up_product">Kaydetme</string>
 </resources>

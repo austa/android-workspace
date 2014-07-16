@@ -8,7 +8,6 @@
         android:id="@+id/resultImage"
         android:layout_width="75sp"
         android:layout_height="75sp"
-        android:layout_centerVertical="true"
         android:layout_marginRight="5dp"
         android:contentDescription="category icon" />
 
@@ -24,26 +23,33 @@
 
     <View
         android:id="@+id/view1"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_alignBottom="@+id/tvProductInformation"
         android:layout_alignParentLeft="true"
         android:background="@color/blue"/>
-     
+
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/upBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/saveBtn"
+        android:layout_alignBottom="@+id/saveBtn"
+        android:layout_alignRight="@+id/view1"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/filter_apply_button"
+        android:enabled="true"
+        android:text="@string/up_product" />
+
+    <Button
+        android:id="@+id/saveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/resultImage"
-        android:layout_alignParentBottom="true"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/view1"
-        android:text="Button" />
+        android:layout_below="@+id/resultImage"
+        android:layout_marginTop="49dp"
+        android:background="@drawable/filter_apply_button"
+        android:enabled="true"
+        android:text="@string/save_product" />
 
 </RelativeLayout>

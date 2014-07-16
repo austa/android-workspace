@@ -35,8 +35,6 @@ int id back_button 0x7f08002b
 int id barcode_image_view 0x7f080016
 int id bookmark_title 0x7f080011
 int id bookmark_url 0x7f080012
-int id button1 0x7f080026
-int id button2 0x7f080027
 int id contents_supplement_text_view 0x7f080020
 int id contents_text_view 0x7f08001f
 int id decode 0x7f080001
@@ -69,6 +67,7 @@ int id result_list_view 0x7f080033
 int id result_view 0x7f080015
 int id resultsList 0x7f08000c
 int id return_scan_result 0x7f080007
+int id saveBtn 0x7f080026
 int id scanButton 0x7f08000b
 int id searchArea 0x7f08000a
 int id search_book_contents_failed 0x7f080008
@@ -87,6 +86,7 @@ int id tvNotResult 0x7f08000f
 int id tvProductInformation 0x7f080025
 int id type_text_view 0x7f08001a
 int id type_text_view_label 0x7f080019
+int id upBtn 0x7f080027
 int id view1 0x7f08000d
 int id viewfinder_view 0x7f080014
 int id vw_splash_main 0x7f080010
@@ -220,11 +220,13 @@ int string result_tel 0x7f09006d
 int string result_text 0x7f09006e
 int string result_uri 0x7f09006f
 int string result_wifi 0x7f090070
+int string save_product 0x7f09007e
 int string sbc_name 0x7f090071
 int string scan 0x7f090079
 int string sesle 0x7f09007a
 int string share_name 0x7f090072
 int string title_about 0x7f090073
+int string up_product 0x7f09007f
 int string urun_ara 0x7f09007c
 int string urun_hakkinda 0x7f09007b
 int string wifi_changing_network 0x7f090074

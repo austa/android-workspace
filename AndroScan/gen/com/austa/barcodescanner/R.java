@@ -56,8 +56,6 @@ public final class R {
         public static final int barcode_image_view=0x7f080016;
         public static final int bookmark_title=0x7f080011;
         public static final int bookmark_url=0x7f080012;
-        public static final int button1=0x7f080026;
-        public static final int button2=0x7f080027;
         public static final int contents_supplement_text_view=0x7f080020;
         public static final int contents_text_view=0x7f08001f;
         public static final int decode=0x7f080001;
@@ -90,6 +88,7 @@ public final class R {
         public static final int result_view=0x7f080015;
         public static final int resultsList=0x7f08000c;
         public static final int return_scan_result=0x7f080007;
+        public static final int saveBtn=0x7f080026;
         public static final int scanButton=0x7f08000b;
         public static final int searchArea=0x7f08000a;
         public static final int search_book_contents_failed=0x7f080008;
@@ -108,6 +107,7 @@ public final class R {
         public static final int tvProductInformation=0x7f080025;
         public static final int type_text_view=0x7f08001a;
         public static final int type_text_view_label=0x7f080019;
+        public static final int upBtn=0x7f080027;
         public static final int view1=0x7f08000d;
         public static final int viewfinder_view=0x7f080014;
         public static final int vw_splash_main=0x7f080010;
@@ -249,11 +249,13 @@ public final class R {
         public static final int result_text=0x7f09006e;
         public static final int result_uri=0x7f09006f;
         public static final int result_wifi=0x7f090070;
+        public static final int save_product=0x7f09007e;
         public static final int sbc_name=0x7f090071;
         public static final int scan=0x7f090079;
         public static final int sesle=0x7f09007a;
         public static final int share_name=0x7f090072;
         public static final int title_about=0x7f090073;
+        public static final int up_product=0x7f09007f;
         public static final int urun_ara=0x7f09007c;
         public static final int urun_hakkinda=0x7f09007b;
         public static final int wifi_changing_network=0x7f090074;
