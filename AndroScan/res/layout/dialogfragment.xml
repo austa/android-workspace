@@ -51,6 +51,7 @@
             android:id="@+id/upBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="29dp"
             android:layout_weight="0.8"
             android:background="@drawable/filter_apply_button"
             android:enabled="true"
@@ -59,7 +60,7 @@
         <View
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.4"         
+            android:layout_weight="0.2"         
              />
 
         <Button
