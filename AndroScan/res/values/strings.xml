@@ -11,4 +11,9 @@
 	<string name="not_result">Herhangi bir barkot göremedik, bu yüzden sonuç bulamadık.</string>
 	<string name="save_product">Ürünü Kaydet</string>
 	<string name="up_product">Kaydetme</string>
+	<string name="product_name">Adı: </string>
+	<string name="empty_product">Ürün yok</string>
+	<string name="product_price">Ürün Fiyat: </string>
+	<string name="product_currency">Para Birimi: </string>
+	<string name="product_store_name">Mağza: </string>
 </resources>

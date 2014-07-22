@@ -8,17 +8,9 @@ import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 
-/**
- * This class creates an abstraction for making the model storage easier. You can extend this class
- * to have a simple DAO for your model.
- *
- * IMPORTANT: The class you use to store must have an empty constructor which is required ormlite.
- * 
- * @param <E>
- */
 public abstract class PersistenceManager<E extends PersistenceManager.Modal> {
 
-    protected static Dao dao;
+    protected Dao dao;
     private String TAG = "PersistenceManager";
 
     protected PersistenceManager(Context context, Class c) {

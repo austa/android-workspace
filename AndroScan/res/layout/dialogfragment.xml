@@ -22,15 +22,88 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_centerInParent="true" >
-
+            android:layout_centerInParent="true" 
+            android:orientation="vertical">
+            
+			  <!-- Product Name textviews -->
             <TextView
-                android:id="@+id/tvProductInformation"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="N/A"
-                android:textSize="16sp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/blue"
+                android:text="@string/product_name"
+                android:textSize="14sp"
                 android:textStyle="bold" />
+            
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_marginLeft="30dp"
+                android:text="@string/empty_product"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            
+            <!-- Product Price textviews -->
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/blue"
+                android:text="@string/product_price"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            
+            <TextView
+                android:id="@+id/tvProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_marginLeft="30dp"
+                android:text="@string/empty_product"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            
+            <!-- Product Currency textviews -->
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/blue"
+                android:text="@string/product_currency"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            
+            <TextView
+                android:id="@+id/tvProductCurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_marginLeft="30dp"
+                android:text="@string/empty_product"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            
+            <!-- Product Currency textviews -->
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/blue"
+                android:text="@string/product_store_name"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            
+            <TextView
+                android:id="@+id/tvProductStoreName"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_marginLeft="30dp"
+                android:text="@string/empty_product"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+         
         </LinearLayout>
     </RelativeLayout>
 

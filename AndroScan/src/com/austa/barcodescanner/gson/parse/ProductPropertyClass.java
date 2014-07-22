@@ -41,6 +41,14 @@ public class ProductPropertyClass {
         return response;
     }
 
+    public String getProductCurrency() {
+        return productCurrency;
+    }
+
+    public String getProductStoreName() {
+        return productStoreName;
+    }
+
     public class ResponseData {
         @SerializedName("results")
         private ProductPropertyClass[] results;
@@ -48,19 +56,6 @@ public class ProductPropertyClass {
         public ProductPropertyClass[] getResults() {
             return results;
         }
-    }
-
-    @Override
-    public String toString() {
-
-        return "İsim: " + this.productName + "\n" +
-
-        "Ürün Fiyatı: " + this.productPrice + "\n" +
-
-        "Para Birim: " + this.productCurrency + "\n" +
-
-        "Mağza adı: " + this.productStoreName + "\n";
-
     }
 
 }

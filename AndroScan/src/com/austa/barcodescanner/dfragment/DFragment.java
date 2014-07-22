@@ -24,7 +24,7 @@ public class DFragment extends DialogFragment implements
     private ProgressBar progressBar;
     private ImageLoader imageloader;
     private NetworkImageView iv;
-    private TextView tvProductInformation;
+    private TextView productName, productPrice, productCurrency, productStoreName;
     private Button btnSaveProduct;
     private Button btnUpProduct;
     private DatabaseApp database;
@@ -37,17 +37,24 @@ public class DFragment extends DialogFragment implements
         getDialog().setTitle(mProduct.getProductName());
 
         //progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
-        database = new DatabaseApp(mProduct.getProductName(), "bbb", "ccc");
+        database = new DatabaseApp(mProduct.getProductName(), mProduct.getProductPrice(), mProduct.getProductCurrency(),
+                mProduct.getProductStoreName());
         btnSaveProduct = (Button) rootView.findViewById(R.id.saveBtn);
         btnUpProduct = (Button) rootView.findViewById(R.id.upBtn);
         iv = (NetworkImageView) rootView.findViewById(R.id.resultImage);
-        tvProductInformation = (TextView) rootView.findViewById(R.id.tvProductInformation);
+        productName = (TextView) rootView.findViewById(R.id.tvProductName);
+        productPrice = (TextView) rootView.findViewById(R.id.tvProductPrice);
+        productCurrency = (TextView) rootView.findViewById(R.id.tvProductCurrency);
+        productStoreName = (TextView) rootView.findViewById(R.id.tvProductStoreName);
 
         btnSaveProduct.setOnClickListener(this);
         btnUpProduct.setOnClickListener(this);
 
         iv.setImageUrl(mProduct.getImageUrl(), imageloader);
-        tvProductInformation.setText(mProduct.getProductName());
+        productName.setText(mProduct.getProductName());
+        productPrice.setText(mProduct.getProductPrice());
+        productCurrency.setText(mProduct.getProductCurrency());
+        productStoreName.setText(mProduct.getProductStoreName());
 
         return rootView;
     }
@@ -66,7 +73,6 @@ public class DFragment extends DialogFragment implements
                 Toast.makeText(getActivity(), "Kaydet tuşuna basıldı", Toast.LENGTH_LONG).show();
                 database.executeInsert(getActivity());
                 database.executeGetList(getActivity());
-                database.executeProductList();
 
                 //progressBar.setVisibility(View.GONE);
                 btnSaveProduct.setEnabled(true);

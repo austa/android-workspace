@@ -19,11 +19,15 @@ public class ProductClass implements
     @DatabaseField(columnName = "product_sname")
     private String productStoreName;
 
-    public ProductClass(int id, String productName, String productPrice, String productStoreName) {
+    @DatabaseField(columnName = "product_currency")
+    private String productCurrency;
+
+    public ProductClass(int id, String productName, String productPrice, String productStoreName, String productCurrency) {
         this.id = id;
         this.productName = productName;
         this.productPrice = productPrice;
         this.productStoreName = productStoreName;
+        this.productCurrency = productCurrency;
     }
 
     public ProductClass() {
@@ -67,7 +71,9 @@ public class ProductClass implements
 
         return "ID: " + this.id + "\n" +
 
-        "Ürün Fiyatı: " + this.productName + "\n" +
+        "Ürün Adı: " + this.productName + "\n" +
+
+        "Para Birimi: " + this.productCurrency + "\n" +
 
         "Ürün Fiyatı: " + this.productPrice + "\n" +
 

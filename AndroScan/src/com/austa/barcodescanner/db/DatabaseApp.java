@@ -8,31 +8,30 @@ public class DatabaseApp {
 
     private String TAG = getClass().getSimpleName();
     private ProductPersistenceManager userPersistenceManager;
+    private static int id = 1;
     private String productName;
     private String productPrice;
     private String productStoreName;
+    private String productCurrency;
     private List<ProductClass> personList;
 
-    public DatabaseApp(String productName, String productPrice, String productStoreName) {
+    public DatabaseApp(String productName, String productPrice, String productStoreName, String productCurrency) {
         this.productName = productName;
         this.productPrice = productPrice;
         this.productStoreName = productStoreName;
+        this.productCurrency = productCurrency;
     }
 
     public void executeInsert(Context context) {
 
         userPersistenceManager = new ProductPersistenceManager(context);
-        userPersistenceManager.create(new ProductClass(1, productName, productPrice, productStoreName));
+        userPersistenceManager.create(new ProductClass(id, productName, productPrice, productStoreName, productCurrency));
+        id = id + 1;
     }
 
     public void executeGetList(Context context) {
-
         userPersistenceManager = new ProductPersistenceManager(context);
         personList = userPersistenceManager.readAll();
-
-    }
-
-    public void executeProductList() {
 
         Log.d(TAG, "Kayıtlı kişiler:");
         for(ProductClass product : personList) {
@@ -41,11 +40,6 @@ public class DatabaseApp {
 
     }
 
-    //
-    //        // kişi listesini yazdırma
-    //        
-    //
-    //        // ismi Barış olan kişilerin listesini yazdırma
     //        Log.d(TAG, "İsmi Barış olan kişiler:");
     //        try {
     //            for(ProductClass person : ProductPersistenceManager.getUsersWithName("Barış")) {
@@ -56,7 +50,7 @@ public class DatabaseApp {
     //            e.printStackTrace();
     //        }
     //
-    //        // kullanıcları listview'da gösterme
+    //        
     //        ((ListView) findViewById(R.id.lwdatabase)).setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, personList));
 
 }
