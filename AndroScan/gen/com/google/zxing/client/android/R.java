@@ -41,7 +41,7 @@ public final class R {
 	}
 	public static final class id {
 		public static final int auto_focus = 0x7f080000;
-		public static final int back_button = 0x7f08002c;
+		public static final int back_button = 0x7f08002d;
 		public static final int barcode_image_view = 0x7f080016;
 		public static final int bookmark_title = 0x7f080011;
 		public static final int bookmark_url = 0x7f080012;
@@ -50,36 +50,36 @@ public final class R {
 		public static final int decode = 0x7f080001;
 		public static final int decode_failed = 0x7f080002;
 		public static final int decode_succeeded = 0x7f080003;
-		public static final int done_button = 0x7f08002d;
-		public static final int encode_view = 0x7f080029;
+		public static final int done_button = 0x7f08002e;
+		public static final int encode_view = 0x7f08002a;
 		public static final int format_text_view = 0x7f080018;
 		public static final int format_text_view_label = 0x7f080017;
-		public static final int help_contents = 0x7f08002b;
-		public static final int history_detail = 0x7f08002f;
-		public static final int history_title = 0x7f08002e;
-		public static final int image_view = 0x7f08002a;
+		public static final int help_contents = 0x7f08002c;
+		public static final int history_detail = 0x7f080030;
+		public static final int history_title = 0x7f08002f;
+		public static final int image_view = 0x7f08002b;
 		public static final int launch_product_query = 0x7f080004;
 		public static final int meta_text_view = 0x7f08001e;
 		public static final int meta_text_view_label = 0x7f08001d;
-		public static final int page_number_view = 0x7f080035;
+		public static final int page_number_view = 0x7f080036;
 		public static final int preview_view = 0x7f080013;
-		public static final int query_button = 0x7f080033;
-		public static final int query_text_view = 0x7f080032;
+		public static final int query_button = 0x7f080034;
+		public static final int query_text_view = 0x7f080033;
 		public static final int quit = 0x7f080005;
 		public static final int restart_preview = 0x7f080006;
 		public static final int result_button_view = 0x7f080021;
-		public static final int result_list_view = 0x7f080034;
+		public static final int result_list_view = 0x7f080035;
 		public static final int result_view = 0x7f080015;
 		public static final int return_scan_result = 0x7f080007;
 		public static final int search_book_contents_failed = 0x7f080008;
 		public static final int search_book_contents_succeeded = 0x7f080009;
-		public static final int share_app_button = 0x7f080037;
-		public static final int share_bookmark_button = 0x7f080038;
-		public static final int share_clipboard_button = 0x7f08003a;
-		public static final int share_contact_button = 0x7f080039;
-		public static final int share_text_view = 0x7f08003b;
+		public static final int share_app_button = 0x7f080038;
+		public static final int share_bookmark_button = 0x7f080039;
+		public static final int share_clipboard_button = 0x7f08003b;
+		public static final int share_contact_button = 0x7f08003a;
+		public static final int share_text_view = 0x7f08003c;
 		public static final int shopper_button = 0x7f080022;
-		public static final int snippet_view = 0x7f080036;
+		public static final int snippet_view = 0x7f080037;
 		public static final int status_view = 0x7f080023;
 		public static final int time_text_view = 0x7f08001c;
 		public static final int time_text_view_label = 0x7f08001b;
@@ -90,13 +90,13 @@ public final class R {
 	public static final class layout {
 		public static final int bookmark_picker_list_item = 0x7f030002;
 		public static final int capture = 0x7f030003;
-		public static final int encode = 0x7f030005;
-		public static final int help = 0x7f030006;
-		public static final int history_list_item = 0x7f030007;
-		public static final int search_book_contents = 0x7f030009;
-		public static final int search_book_contents_header = 0x7f03000a;
-		public static final int search_book_contents_list_item = 0x7f03000b;
-		public static final int share = 0x7f03000c;
+		public static final int encode = 0x7f030006;
+		public static final int help = 0x7f030007;
+		public static final int history_list_item = 0x7f030008;
+		public static final int search_book_contents = 0x7f03000a;
+		public static final int search_book_contents_header = 0x7f03000b;
+		public static final int search_book_contents_list_item = 0x7f03000c;
+		public static final int share = 0x7f03000d;
 	}
 	public static final class raw {
 		public static final int beep = 0x7f050000;

@@ -9,10 +9,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.austa.barcodescanner.R;
 import com.austa.barcodescanner.adapter.VolleyCaptechApplication;
+import com.austa.barcodescanner.db.DatabaseApp;
 import com.austa.barcodescanner.gson.parse.ProductPropertyClass;
 
 public class DFragment extends DialogFragment implements
@@ -25,6 +27,7 @@ public class DFragment extends DialogFragment implements
     private TextView tvProductInformation;
     private Button btnSaveProduct;
     private Button btnUpProduct;
+    private DatabaseApp database;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,7 +36,8 @@ public class DFragment extends DialogFragment implements
         imageloader = ((VolleyCaptechApplication) rootView.getContext().getApplicationContext()).getImageLoader();
         getDialog().setTitle(mProduct.getProductName());
 
-        progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
+        //progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
+        database = new DatabaseApp(mProduct.getProductName(), "bbb", "ccc");
         btnSaveProduct = (Button) rootView.findViewById(R.id.saveBtn);
         btnUpProduct = (Button) rootView.findViewById(R.id.upBtn);
         iv = (NetworkImageView) rootView.findViewById(R.id.resultImage);
@@ -43,29 +47,10 @@ public class DFragment extends DialogFragment implements
         btnUpProduct.setOnClickListener(this);
 
         iv.setImageUrl(mProduct.getImageUrl(), imageloader);
-        tvProductInformation.setText(mProduct.toString());
+        tvProductInformation.setText(mProduct.getProductName());
 
         return rootView;
     }
-
-    //    @Override
-    //    public Dialog onCreateDialog(Bundle savedInstanceState) {
-    //        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity()).setIcon(R.drawable.androidhappy)
-    //
-    //        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-    //            public void onClick(DialogInterface dialog, int which) {
-    //                Toast.makeText(getActivity(), "asdasd", Toast.LENGTH_LONG).show();
-    //            }
-    //        })
-    //
-    //        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-    //            public void onClick(DialogInterface dialog, int which) {
-    //
-    //            }
-    //        });
-    //
-    //        return builder.create();
-    //    }
 
     public void setData(ProductPropertyClass product) {
         mProduct = product;
@@ -77,21 +62,21 @@ public class DFragment extends DialogFragment implements
         switch (v.getId()) {
             case R.id.saveBtn:
                 btnSaveProduct.setEnabled(false);
-                progressBar.setVisibility(View.VISIBLE);
-                /*
-                 * Veritabanı ekleme işlemeleri buraya gelecek
-                 */
-                progressBar.setVisibility(View.GONE);
+                //progressBar.setVisibility(View.VISIBLE);
+                Toast.makeText(getActivity(), "Kaydet tuşuna basıldı", Toast.LENGTH_LONG).show();
+                database.executeInsert(getActivity());
+                database.executeGetList(getActivity());
+                database.executeProductList();
+
+                //progressBar.setVisibility(View.GONE);
                 btnSaveProduct.setEnabled(true);
                 break;
 
             case R.id.upBtn:
                 btnUpProduct.setEnabled(false);
-                progressBar.setVisibility(View.VISIBLE);
-                /*
-                 * Buraya ise daha sonra düşünülecek bir buton işlevi gelecek
-                 */
-                progressBar.setVisibility(View.GONE);
+                //progressBar.setVisibility(View.VISIBLE);
+                Toast.makeText(getActivity(), "İptal tuşuna basıldı", Toast.LENGTH_LONG).show();
+                //progressBar.setVisibility(View.GONE);
                 btnUpProduct.setEnabled(true);
                 break;
         }

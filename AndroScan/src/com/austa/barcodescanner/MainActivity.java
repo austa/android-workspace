@@ -47,12 +47,14 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         vDraw = (View) findViewById(R.id.view1);
         tvNotResult = (TextView) findViewById(R.id.tvNotResult);
         scanButton = (Button) findViewById(R.id.scanButton);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         resultList = (ListView) findViewById(R.id.resultsList);
         queue = Volley.newRequestQueue(getApplicationContext());
+
         scanButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
